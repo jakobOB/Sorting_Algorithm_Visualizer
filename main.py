@@ -1,21 +1,20 @@
-import time
 import pygame
-from game import Game
+from visualizer import Visualizer
 
 
-def game_loop(game):
-    while game.is_running:
-        game.check_event()
-        game.draw()
+def game_loop(visualizer):
+    while visualizer.is_running:
+        visualizer.check_event()
+        visualizer.draw()
         pygame.display.update()
 
 
 if __name__ == '__main__':
     pygame.init()
-    game = Game()
-    screen = pygame.display.set_mode((game.WIDTH, game.HEIGHT))
-    game.screen = screen
+    visualizer = Visualizer()
+    screen = pygame.display.set_mode((visualizer.WIDTH, visualizer.HEIGHT))
+    visualizer.screen = screen
     pygame.display.set_caption("SORTING VISUALISER")
-    game.screen.fill(game.WHITE)
-    game_loop(game)
-    game.quit_game()
+    visualizer.screen.fill(visualizer.WHITE)
+    game_loop(visualizer)
+    visualizer.quit_game()

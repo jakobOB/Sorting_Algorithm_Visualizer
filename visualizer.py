@@ -10,7 +10,7 @@ class Bar:
         self.color = color   # White = unsorted, Green = sorted, Red = on look
 
 
-class Game:
+class Visualizer:
     def __init__(self):
         self.is_running = True
         self.is_sorting = False
@@ -114,11 +114,11 @@ class Game:
     def check_event(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.quit_game()
+                self.quit_visualizer()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    self.quit_game()
+                    self.quit_visualizer()
 
-    def quit_game(self):
+    def quit_visualizer(self):
         pygame.quit()
         quit()

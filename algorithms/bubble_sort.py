@@ -1,14 +1,14 @@
 def bubble_sort(*args):
-    game = args[0]
+    visualizer = args[0]
 
-    for j in range(len(game.array) - 1, 0, -1):
+    for j in range(len(visualizer.array) - 1, 0, -1):
 
         for i in range(j):
-            game.array[i].color, game.array[i+1].color = game.RED, game.RED
-            game.refill(delay=5)
-            game.array[i].color, game.array[i + 1].color = game.GREEN, game.GREEN
+            visualizer.array[i].color, visualizer.array[i+1].color = visualizer.RED, visualizer.RED
+            visualizer.refill(delay=5)
+            visualizer.array[i].color, visualizer.array[i + 1].color = visualizer.GREEN, visualizer.GREEN
 
-            if game.array[i].value > game.array[i+1].value:
-                game.array[i], game.array[i+1] = game.array[i+1], game.array[i]
+            if visualizer.array[i].value > visualizer.array[i+1].value:
+                visualizer.array[i], visualizer.array[i+1] = visualizer.array[i+1], visualizer.array[i]
 
-        game.array[j].color = game.ORANGE
+        visualizer.array[j].color = visualizer.ORANGE
